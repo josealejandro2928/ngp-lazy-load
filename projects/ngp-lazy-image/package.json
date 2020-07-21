@@ -1,0 +1,11 @@
+{
+  "name": "ngp-lazy-image",
+  "version": "0.0.3",
+  "peerDependencies": {
+    "@angular/common": "^10.0.4",
+    "@angular/core": "^10.0.4"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}
