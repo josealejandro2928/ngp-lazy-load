@@ -1,24 +1,48 @@
 # NgpLazyImage
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+It is a directive developed in angular for the lazy loading of images
 
-## Code scaffolding
+### Installation
 
-Run `ng generate component component-name --project ngp-lazy-image` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngp-lazy-image`.
-> Note: Don't forget to add `--project ngp-lazy-image` or else it will be added to the default project in your `angular.json` file. 
+```sh
+npm i ngp-lazy-image --save
+```
 
-## Build
+### Usages
 
-Run `ng build ngp-lazy-image` to build the project. The build artifacts will be stored in the `dist/` directory.
+You must import the module `NgpImageLazyLoadModule` where you will use it.
 
-## Publishing
+```typescript
+***
+import { NgpImageLazyLoadModule } from 'ngp-lazy-image';
+@NgModule({
+  ***
+  imports: [
+    NgpImageLazyLoadModule,
+  ],
+****
+})
+```
 
-After building your library with `ng build ngp-lazy-image`, go to the dist folder `cd dist/ngp-lazy-image` and run `npm publish`.
+The ngp-lazy directive is placed on each img tag that requires lazy loading of the image:
 
-## Running unit tests
+```html
+<img ngp-lazy [src]="image.image" />
+```
 
-Run `ng test ngp-lazy-image` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### More configuration
 
-## Further help
+You can change the detection threshold of the image and the opacity to load time to give a better transition to the user
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```html
+<img
+  src="https://images8.alphacoders.com/468/thumb-1920-468739.jpg"
+  ngp-lazy
+  ngp-threshold="0.1"
+  ngp-opacity-duration="1.5s"
+/>
+```
+
+### More examples
+
+![Image Rating](https://havanatursa.com/assets/images/npm/image-lazy-load.gif)
