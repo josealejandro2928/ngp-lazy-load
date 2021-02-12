@@ -2,9 +2,11 @@ import {
   AfterViewInit,
   Directive,
   ElementRef,
+  EventEmitter,
   HostBinding,
   Input,
   OnDestroy,
+  Output,
 } from '@angular/core';
 
 @Directive({
@@ -15,6 +17,8 @@ export class LazyLoadDirective implements AfterViewInit, OnDestroy {
   srcFull = '';
   _threshold = 0.1;
   _opacityDuration = '.5s';
+  @Output() $imageLoaded = new EventEmitter<any>();
+  @Output() $imageBeginObserved = new EventEmitter<any>();
 
   @Input() set src(value) {
     this.srcFull = value + '';
@@ -36,10 +40,12 @@ export class LazyLoadDirective implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
+    this.$imageBeginObserved.next(true);
     this.canLazyLoad() ? this.lazyLoadImage() : this.loadImage();
     this.el.nativeElement.addEventListener('load', () => {
       this.el.nativeElement.style.transition = `all ${this._opacityDuration} ease`;
       this.el.nativeElement.style.opacity = 1;
+      this.$imageLoaded.next(true);
     });
   }
 
