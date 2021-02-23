@@ -1,38 +1,46 @@
-# NgpLazyImage
+# NgpLazyLoad
 
-It is a directive developed in angular for the lazy loading of images
+It is a directive developed in angular for the lazy loading of images, ifrmes, object and 
+any content that have children nodes
 
 ### Installation
-
 ```sh
 npm i ngp-lazy-load --save
 ```
-
 ### Usages
-
-You must import the module `NgpImageLazyLoadModule` where you will use it.
-
+You must import the module `NgpLazyLoadModule` where you will use it.
 ```typescript
 ***
-import { NgpImageLazyLoadModule } from 'ngp-lazy-load';
+import { NgpLazyLoadModule } from 'ngp-lazy-load';
 @NgModule({
   ***
   imports: [
-    NgpImageLazyLoadModule,
+    NgpLazyLoadModule,
   ],
 ****
 })
 ```
 
-The ngp-lazy directive is placed on each img tag that requires lazy loading of the image:
+The ngp-lazy directive is placed on each i tag that requires lazy loading of the content:
 
 ```html
 <img ngp-lazy [src]="image.image" />
+
+<video controls ngp-lazy src="../assets/media/video.mp4#t=2">
+</video>
+```
+In the examples above, we were applying lazy load to elements with the src property (video, img, iframes).
+When we want to apply it to html content of a specific div using the "data-src" attribute we can do the lazy loading
+```html
+ <section ngp-lazy data-src="true">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum aut consectetur illo velit ad! Sed, distinctio
+        pariatur? Est dicta amet consequatur consectetur ullam libero! Sed quis laboriosam qui aliquam quae?</p>
+     <app-dummy></app-dummy>
+</section>
 ```
 
 ### More configuration
-
-You can change the detection threshold of the image and the opacity to load time to give a better transition to the user
+You can change the detection threshold of the elemnt and the opacity to load time to give a better transition to the user
 
 ```html
 <img
