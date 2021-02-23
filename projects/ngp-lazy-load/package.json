@@ -1,6 +1,6 @@
 {
-  "name": "ngp-lazy-image",
-  "version": "0.0.7",
+  "name": "ngp-lazy-load",
+  "version": "1.0.1",
   "peerDependencies": {
     "@angular/common": "^10.0.4",
     "@angular/core": "^10.0.4"
@@ -8,5 +8,5 @@
   "dependencies": {
     "tslib": "^2.0.0"
   },
-  "keywords": ["angular", "lazy loading", "images", "lazy images"]
+  "keywords": ["angular","lazy content","lazy loading", "images", "lazy images"]
 }

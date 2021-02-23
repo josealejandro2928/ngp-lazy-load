@@ -8,10 +8,10 @@
   "files": [],
   "references": [
     {
-      "path": "./projects/ngp-lazy-image/tsconfig.lib.json"
+      "path": "./projects/ngp-lazy-load/tsconfig.lib.json"
     },
     {
-      "path": "./projects/ngp-lazy-image/tsconfig.spec.json"
+      "path": "./projects/ngp-lazy-load/tsconfig.spec.json"
     }
 ]
 }

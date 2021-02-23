@@ -5,7 +5,7 @@ It is a directive developed in angular for the lazy loading of images
 ### Installation
 
 ```sh
-npm i ngp-lazy-image --save
+npm i ngp-lazy-load --save
 ```
 
 ### Usages
@@ -14,7 +14,7 @@ You must import the module `NgpImageLazyLoadModule` where you will use it.
 
 ```typescript
 ***
-import { NgpImageLazyLoadModule } from 'ngp-lazy-image';
+import { NgpImageLazyLoadModule } from 'ngp-lazy-load';
 @NgModule({
   ***
   imports: [

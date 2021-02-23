@@ -16,9 +16,9 @@
       "dom"
     ],
     "paths": {
-      "ngp-lazy-image": [
-        "dist/ngp-lazy-image/ngp-lazy-image",
-        "dist/ngp-lazy-image"
+      "ngp-lazy-load": [
+        "dist/ngp-lazy-load/ngp-lazy-load",
+        "dist/ngp-lazy-load"
       ]
     }
   }

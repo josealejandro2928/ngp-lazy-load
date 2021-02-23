@@ -3,38 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngp-lazy-image": {
+    "ngp-lazy-load": {
       "projectType": "library",
-      "root": "projects/ngp-lazy-image",
-      "sourceRoot": "projects/ngp-lazy-image/src",
+      "root": "projects/ngp-lazy-load",
+      "sourceRoot": "projects/ngp-lazy-load/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ngp-lazy-image/tsconfig.lib.json",
-            "project": "projects/ngp-lazy-image/ng-package.json"
+            "tsConfig": "projects/ngp-lazy-load/tsconfig.lib.json",
+            "project": "projects/ngp-lazy-load/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngp-lazy-image/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ngp-lazy-load/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ngp-lazy-image/src/test.ts",
-            "tsConfig": "projects/ngp-lazy-image/tsconfig.spec.json",
-            "karmaConfig": "projects/ngp-lazy-image/karma.conf.js"
+            "main": "projects/ngp-lazy-load/src/test.ts",
+            "tsConfig": "projects/ngp-lazy-load/tsconfig.spec.json",
+            "karmaConfig": "projects/ngp-lazy-load/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ngp-lazy-image/tsconfig.lib.json",
-              "projects/ngp-lazy-image/tsconfig.spec.json"
+              "projects/ngp-lazy-load/tsconfig.lib.json",
+              "projects/ngp-lazy-load/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -43,5 +43,5 @@
         }
       }
     }},
-  "defaultProject": "ngp-lazy-image"
+  "defaultProject": "ngp-lazy-load"
 }
