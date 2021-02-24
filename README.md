@@ -39,6 +39,15 @@ When we want to apply it to html content of a specific div using the "data-src" 
 </section>
 ```
 
+When the element the content is fully loaded the. directive emits an Output with that element.
+```html
+ <div ($mediaLoaded)="onMediaLoaded($event)" ngp-lazy ngp-threshold="1" data-src="true" class="source-container">
+    <iframe  src="https://www.youtube.com/embed/9v0uZS8ro68" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+ </div>
+```
+
 ### More configuration
 You can change the detection threshold of the elemnt and the opacity to load time to give a better transition to the user
 
