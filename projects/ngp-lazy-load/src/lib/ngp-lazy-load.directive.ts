@@ -3,6 +3,7 @@ import {
   Directive,
   ElementRef,
   EventEmitter,
+  HostBinding,
   Input,
   OnDestroy,
   Output,
@@ -45,8 +46,8 @@ export class LazyLoadDirective implements AfterViewInit, OnDestroy {
   }
 
   constructor(private el: ElementRef) {
-    this.el.nativeElement.style.opacity = 0;
     this.elRefMedia = this.el.nativeElement;
+    this.hideStyles();
   }
 
   ngAfterViewInit() {
@@ -91,8 +92,13 @@ export class LazyLoadDirective implements AfterViewInit, OnDestroy {
     } else {
       if (this.elRefMedia.innerHTML !== undefined) {
         this.elRefMedia.innerHTML = this.srcFull;
-        this.el.nativeElement.style.transition = `all ${this._opacityDuration} ease`;
-        this.el.nativeElement.style.opacity = 1;
+        this.showStyles();
+        let iframe = this.elRefMedia.querySelector('iframe');
+        if (iframe) {
+          this.$mediaLoaded.next(iframe);
+        } else {
+          this.$mediaLoaded.next(this.elRefMedia);
+        }
       }
     }
   }
@@ -100,15 +106,13 @@ export class LazyLoadDirective implements AfterViewInit, OnDestroy {
   eventFromDifferentResources = () => {
     // IMAGE SOURCES OR IFRAMES OR OBJECT
     this.elRefMedia.addEventListener('load', () => {
-      this.el.nativeElement.style.transition = `all ${this._opacityDuration} ease`;
-      this.el.nativeElement.style.opacity = 1;
-      this.$mediaLoaded.next(true);
+      this.showStyles();
+      this.$mediaLoaded.next(this.elRefMedia);
     });
     // VIDEO SOURCES
     this.elRefMedia.addEventListener('loadeddata', () => {
-      this.el.nativeElement.style.transition = `all ${this._opacityDuration} ease`;
-      this.el.nativeElement.style.opacity = 1;
-      this.$mediaLoaded.next(true);
+      this.showStyles();
+      this.$mediaLoaded.next(this.elRefMedia);
     });
   };
 
@@ -128,9 +132,19 @@ export class LazyLoadDirective implements AfterViewInit, OnDestroy {
     if (
       !['IFRAME', 'VIDEO', 'IMG', 'OBJECT'].includes(this.elRefMedia.tagName)
     ) {
-      console.log('ELEMNTO CON CHILD NODES');
       this.srcFull = this.elRefMedia.innerHTML + '';
       this.elRefMedia.innerHTML = '';
     }
+  };
+
+  hideStyles = () => {
+    this.elRefMedia.style.background = '#e0e0e0';
+    this.elRefMedia.style.opacity = '0.5';
+  };
+
+  showStyles = () => {
+    this.elRefMedia.style.transition = `all ${this._opacityDuration} ease`;
+    this.elRefMedia.style.opacity = '1';
+    this.elRefMedia.style.background = 'unset';
   };
 }
