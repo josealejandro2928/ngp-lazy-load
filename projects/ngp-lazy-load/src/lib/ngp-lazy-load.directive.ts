@@ -106,6 +106,7 @@ export class LazyLoadDirective implements AfterViewInit, OnDestroy {
   eventFromDifferentResources = () => {
     // IMAGE SOURCES OR IFRAMES OR OBJECT
     this.elRefMedia.addEventListener('load', () => {
+      // console.log('Llego la img');
       this.showStyles();
       this.$mediaLoaded.next(this.elRefMedia);
     });
@@ -138,13 +139,13 @@ export class LazyLoadDirective implements AfterViewInit, OnDestroy {
   };
 
   hideStyles = () => {
-    this.elRefMedia.style.background = '#e0e0e0';
-    this.elRefMedia.style.opacity = '0.5';
+    // this.elRefMedia.style.background = '#e0e0e0';
+    this.elRefMedia.style.opacity = '0.0';
   };
 
   showStyles = () => {
-    this.elRefMedia.style.transition = `opacity ${this._opacityDuration} ease`;
+    this.elRefMedia.style.transition = `all ${this._opacityDuration} ease`;
     this.elRefMedia.style.opacity = '1';
-    this.elRefMedia.style.background = 'unset';
+    // this.elRefMedia.style.background = 'unset';
   };
 }
