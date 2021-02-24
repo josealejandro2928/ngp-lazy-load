@@ -143,7 +143,7 @@ export class LazyLoadDirective implements AfterViewInit, OnDestroy {
   };
 
   showStyles = () => {
-    this.elRefMedia.style.transition = `all ${this._opacityDuration} ease`;
+    this.elRefMedia.style.transition = `opacity ${this._opacityDuration} ease`;
     this.elRefMedia.style.opacity = '1';
     this.elRefMedia.style.background = 'unset';
   };
