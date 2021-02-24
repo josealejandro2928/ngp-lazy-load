@@ -39,7 +39,7 @@ When we want to apply it to html content of a specific div using the "data-src" 
 </section>
 ```
 
-When the element the content is fully loaded the. directive emits an Output with that element.
+When the element or the content is fully loaded. The directive emits an Output with that element.
 ```html
  <div ($mediaLoaded)="onMediaLoaded($event)" ngp-lazy ngp-threshold="1" data-src="true" class="source-container">
     <iframe  src="https://www.youtube.com/embed/9v0uZS8ro68" frameborder="0"
