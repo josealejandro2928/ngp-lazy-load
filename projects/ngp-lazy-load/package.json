@@ -1,6 +1,6 @@
 {
   "name": "ngp-lazy-load",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "peerDependencies": {
     "@angular/common": "^10.0.4",
     "@angular/core": "^10.0.4"
@@ -8,5 +8,19 @@
   "dependencies": {
     "tslib": "^2.0.0"
   },
-  "keywords": ["angular","lazy content","lazy loading", "images", "lazy images"]
+  "keywords": [
+    "angular",
+    "lazy content",
+    "lazy loading",
+    "images",
+    "lazy images"
+  ],
+  "license": "MIT",
+  "author": "Jose Alejandro Concepcion Alvarez",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/josealejandro2928/ngp-lazy-load"
+  },
+  "bugs": "https://github.com/josealejandro2928/ngp-lazy-load/issues",
+  "homepage": "https://github.com/josealejandro2928/ngp-lazy-load#readme"
 }

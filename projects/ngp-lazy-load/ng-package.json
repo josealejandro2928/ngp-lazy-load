@@ -3,5 +3,9 @@
   "dest": "../../dist/ngp-lazy-load",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": [
+    "./LICENSE.md",
+    "./README.md"
+  ]
 }

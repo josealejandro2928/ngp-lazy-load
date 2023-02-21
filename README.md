@@ -1,7 +1,6 @@
 # NgpLazyLoad
 
-It is a directive developed in angular for the lazy loading of images, ifrmes, object and 
-any content that have children nodes
+It is a directive developed in angular for the lazy loading of images, iframe, object and any content that have children nodes
 
 ### Installation
 ```sh
